@@ -82,7 +82,7 @@ module "ec2_cluster" {
   vpc_security_group_ids = [aws_security_group.allowed_traffic.id]
   iam_instance_profile   = aws_iam_instance_profile.bastion_profile.name
 
-
+  
   root_block_device = [
     {
       delete_on_termination = true
