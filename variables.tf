@@ -8,6 +8,11 @@ variable "intance_type" {
   description = "Instance type used"
 }
 
+variable "intance_count" {
+  default     = "1"
+  description = "Instance count"
+}
+
 variable "region" {
   default     = "us-west-2"
   description = "AWS Region"
