@@ -8,7 +8,8 @@ variable "intance_type" {
   description = "Instance type used"
 }
 
-variable "intance_count" {
+
+variable "instance_count" {
   default     = "1"
   description = "Instance count"
 }
