@@ -60,6 +60,7 @@ resource "aws_iam_policy_attachment" "bastion-policy-attach" {
   policy_arn = aws_iam_policy.bastion_policy.arn
 }
 
+/*
 data "template_file" "bastion-userdata" {
   count    = var.instance_count
   template = file("./templates/userdata/bastion.tpl")
@@ -67,6 +68,8 @@ data "template_file" "bastion-userdata" {
 
   }
 }
+*/
+
 module "ec2_cluster" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
   version                = "2.19.0"
@@ -78,7 +81,6 @@ module "ec2_cluster" {
   subnet_id              = aws_subnet.public-subnet-1.id
   vpc_security_group_ids = [aws_security_group.allowed_traffic.id]
   iam_instance_profile   = aws_iam_instance_profile.bastion_profile.name
-  #user_data              = element(data.template_file.bastion-userdata.*.rendered, count.index)
 
   
   root_block_device = [
