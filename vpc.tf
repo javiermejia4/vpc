@@ -6,7 +6,7 @@ resource "aws_vpc" "production-vpc" {
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMamba-VPC"
+      Name = "blackmamba-VPC"
     },
   )
 }
@@ -19,7 +19,7 @@ resource "aws_subnet" "public-subnet-1" {
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMamba-PublicSubnet-1"
+      Name = "blackmamba-PublicSubnet-1"
     },
   )
 }
@@ -32,7 +32,7 @@ resource "aws_subnet" "private-subnet-1" {
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMambaPrivateSubnet-1"
+      Name = "blackmambaPrivateSubnet-1"
     },
   )
 }
@@ -45,7 +45,7 @@ resource "aws_subnet" "private-subnet-2" {
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMambaPrivateSubnet-2"
+      Name = "blackmambaPrivateSubnet-2"
     },
   )
 }
@@ -58,7 +58,7 @@ resource "aws_subnet" "private-subnet-3" {
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMambaPrivateSubnet-3"
+      Name = "blackmambaPrivateSubnet-3"
     },
   )
 }
@@ -70,7 +70,7 @@ resource "aws_route_table" "public-route-table" {
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMambaPublicRouteTable"
+      Name = "blackmambaPublicRouteTable"
     },
   )
 }
@@ -82,7 +82,7 @@ resource "aws_route_table" "private-route-table" {
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMambaPrivateRouteTable"
+      Name = "blackmambaPrivateRouteTable"
     },
   )
 }
@@ -105,7 +105,7 @@ resource "aws_internet_gateway" "production-igw" {
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMambaProduction-IGW"
+      Name = "blackmambaProduction-IGW"
     },
   )
 }
@@ -120,12 +120,12 @@ resource "aws_route" "public-internet-gateway-route" {
 ## security groups
 resource "aws_security_group" "allowed_traffic" {
   vpc_id      = aws_vpc.production-vpc.id
-  description = "BlackMamba SG"
+  description = "blackmamba SG"
 
   tags = merge(
     local.common_tags,
     {
-      Name = "BlackMamba-SG"
+      Name = "blackmamba-SG"
     },
   )
 
