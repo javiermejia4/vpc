@@ -78,7 +78,7 @@ module "ec2_cluster" {
   subnet_id              = aws_subnet.public-subnet-1.id
   vpc_security_group_ids = [aws_security_group.allowed_traffic.id]
   iam_instance_profile   = aws_iam_instance_profile.bastion_profile.name
-  user_data              = element(data.template_file.bastion-userdata.*.rendered, count.index)
+  #user_data              = element(data.template_file.bastion-userdata.*.rendered, count.index)
 
 
   root_block_device = [
