@@ -80,7 +80,7 @@ module "ec2_cluster" {
   iam_instance_profile   = aws_iam_instance_profile.bastion_profile.name
   #user_data              = element(data.template_file.bastion-userdata.*.rendered, count.index)
 
-
+  
   root_block_device = [
     {
       delete_on_termination = true
