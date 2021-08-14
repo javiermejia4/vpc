@@ -3,7 +3,7 @@ variable "linux_ami" {
   description = "Linux AMI used"
 }
 
-variable "intance_type" {
+variable "instance_type" {
   default     = "t2.micro"
   description = "Instance type used"
 }
