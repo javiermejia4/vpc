@@ -32,7 +32,7 @@ resource "aws_subnet" "private-subnet-1" {
   tags = merge(
     local.common_tags,
     {
-      Name = "blackmambaPrivateSubnet-1"
+      Name = "blackmamba-PrivateSubnet-1"
     },
   )
 }
@@ -45,7 +45,7 @@ resource "aws_subnet" "private-subnet-2" {
   tags = merge(
     local.common_tags,
     {
-      Name = "blackmambaPrivateSubnet-2"
+      Name = "blackmamba-PrivateSubnet-2"
     },
   )
 }
@@ -58,7 +58,7 @@ resource "aws_subnet" "private-subnet-3" {
   tags = merge(
     local.common_tags,
     {
-      Name = "blackmambaPrivateSubnet-3"
+      Name = "blackmamba-PrivateSubnet-3"
     },
   )
 }
@@ -70,7 +70,7 @@ resource "aws_route_table" "public-route-table" {
   tags = merge(
     local.common_tags,
     {
-      Name = "blackmambaPublicRouteTable"
+      Name = "blackmamba-PublicRouteTable"
     },
   )
 }
@@ -82,7 +82,7 @@ resource "aws_route_table" "private-route-table" {
   tags = merge(
     local.common_tags,
     {
-      Name = "blackmambaPrivateRouteTable"
+      Name = "blackmamba-PrivateRouteTable"
     },
   )
 }
@@ -105,7 +105,7 @@ resource "aws_internet_gateway" "production-igw" {
   tags = merge(
     local.common_tags,
     {
-      Name = "blackmambaProduction-IGW"
+      Name = "blackmamba-Production-IGW"
     },
   )
 }

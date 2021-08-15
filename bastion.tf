@@ -28,7 +28,6 @@ resource "aws_iam_role" "bastion_role" {
     {
       Role = "Bastion"
     },
-    local.common_tags
   )
 }
 
@@ -60,17 +59,8 @@ resource "aws_iam_policy_attachment" "bastion-policy-attach" {
   policy_arn = aws_iam_policy.bastion_policy.arn
 }
 
-/*
-data "template_file" "bastion-userdata" {
-  count    = var.instance_count
-  template = file("./templates/userdata/bastion.tpl")
-  vars = {
 
-  }
-}
-*/
-
-module "ec2_cluster" {
+module "ec2-instance" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
   version                = "2.19.0"
   name                   = "bastion_host"
@@ -87,14 +77,14 @@ module "ec2_cluster" {
     {
       delete_on_termination = true
       encrypted             = false
-      volume_size           = 50
+      volume_size           = 20
       volume_type           = "gp3"
     },
   ]
 
   tags = merge(
     {
-      Name = "blackMamba-bastion-0${count.index}"
+      Name = "blackMamba-bastion-0${count.index +1}"
       Role = "Bastion"
     },
     local.common_tags
