@@ -28,7 +28,6 @@ resource "aws_iam_role" "bastion_role" {
     {
       Role = "Bastion"
     },
-    local.common_tags
   )
 }
 
@@ -85,7 +84,7 @@ module "ec2-instance" {
 
   tags = merge(
     {
-      Name = "blackMamba-bastion-0${count.index}"
+      Name = "blackMamba-bastion-0${count.index +1}"
       Role = "Bastion"
     },
     local.common_tags
